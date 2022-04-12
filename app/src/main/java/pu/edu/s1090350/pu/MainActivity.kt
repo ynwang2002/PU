@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity(),
     GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener, View.OnTouchListener {
     lateinit var gDetector: GestureDetector
     var PictureNo:Int = 0  //目前顯示第幾張圖
-    var TotalPictures:Int = 5 //總共幾張圖片
+    var TotalPictures:Int = 6 //總共幾張圖片
 
     fun ShowPicture() {
         /*
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(),
         }
         */
         txv.text = PictureNo.toString()
-        var res:Int = getResources().getIdentifier("pu" + PictureNo.toString(),
+        var res:Int = getResources().getIdentifier("s" + PictureNo.toString(),
             "drawable", getPackageName())
         img.setImageResource(res)
     }
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(),
         var countDrawables:Int = -1
         while (res != 0) {
             countDrawables++;
-            res = getResources().getIdentifier("pu" + countDrawables.toString(),
+            res = getResources().getIdentifier("s" + countDrawables.toString(),
                 "drawable", getPackageName());
         }
         TotalPictures = countDrawables
